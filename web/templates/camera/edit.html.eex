@@ -1,0 +1,6 @@
+<h2>Edit camera</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: camera_path(@conn, :update, @camera) %>
+
+<%= link "Back", to: camera_path(@conn, :index) %>

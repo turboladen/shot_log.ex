@@ -1,0 +1,23 @@
+<h2>Show camera</h2>
+
+<ul>
+
+  <li>
+    <strong>Model:</strong>
+    <%= @camera.model %>
+  </li>
+
+  <li>
+    <strong>Sub model:</strong>
+    <%= @camera.sub_model %>
+  </li>
+
+  <li>
+    <strong>Brand:</strong>
+    <%= @camera.brand_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: camera_path(@conn, :edit, @camera) %>
+<%= link "Back", to: camera_path(@conn, :index) %>

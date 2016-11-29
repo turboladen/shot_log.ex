@@ -18,6 +18,7 @@ defmodule ShotLog.Router do
 
     get "/", PageController, :index
     resources "/brands", BrandController
+    resources "/cameras", CameraController
   end
 
   # Other scopes may use custom stacks.

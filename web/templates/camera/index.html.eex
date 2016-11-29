@@ -1,0 +1,30 @@
+<h2>Listing cameras</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Sub model</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for camera <- @cameras do %>
+    <tr>
+      <td><%= camera.brand.name %></td>
+      <td><%= camera.model %></td>
+      <td><%= camera.sub_model %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: camera_path(@conn, :show, camera), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: camera_path(@conn, :edit, camera), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: camera_path(@conn, :delete, camera), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New camera", to: camera_path(@conn, :new) %>
